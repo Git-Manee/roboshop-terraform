@@ -35,8 +35,8 @@ resource "aws_route53_record" "record" {
   zone_id = "Z06195201DS9N630KC87K"
   name    = "${element(var.components, count.index )}-dev"
   type    = "A"
-  ttl     = 300
-  records = [element(aws_instance.instance.*.private_ip, count.index )]
+  ttl     = 30
+  records = [element(aws_instance.instance.*.private_ip, count.index)]
 }
 
 resource "null_resource" "set-hostname" {
