@@ -30,7 +30,7 @@ resource "aws_instance" "instance" {
   }
 }
 
-resource "aws_route53_record" "arecord" {
+resource "aws_route53_record" "record" {
   count = length(var.components)
   zone_id = "Z06195201DS9N630KC87K"
   name    = "${element(var.components, count.index )}-dev"
